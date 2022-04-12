@@ -10,25 +10,6 @@ local opt = {
   silent = true
 }
 
-
--- my-coc-keymap
-local myopt = {
-	noremap = false,
-	silent = true
-}
-map("n","gd","<Plug>(coc-definition)",{
-	noremap = false,
-	silent = true
-})
-map("n","gy","<Plug>(coc-type-definition)",myopt)
-map("n","gi","<Plug>(coc-implementation)",myopt)
-map("n","gr","<Plug>(coc-references)",myopt)
-
--- test 
--- map("n","gd","G",opt)
-
-
-
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",

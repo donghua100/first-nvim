@@ -61,6 +61,11 @@ packer.startup({
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate"
     })
+    ---------------------mycoc--------------------
+    use ({'neoclide/coc.nvim', branch = 'release'})
+
+    --------------------myindentLine--------------
+    use ({"lukas-reineke/indent-blankline.nvim"})
 
     --------------------- LSP --------------------
     -- lspconfig
@@ -97,14 +102,16 @@ packer.startup({
       requires = {"rktjmp/lush.nvim"}
     })
     -- zephyr
-    -- use("glepnir/zephyr-nvim")
+    --use("glepnir/zephyr-nvim")
     -- nord
     use("shaunsingh/nord.nvim")
     -- onedark
     use("ful1e5/onedark.nvim")
     -- nightfox
     use("EdenEast/nightfox.nvim")
-
+    
+    -- monokai
+    use("tanvirtin/monokai.nvim")
     -------------------------------------------------------
 
     if paccker_bootstrap then
