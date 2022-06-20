@@ -7,7 +7,7 @@ local paccker_bootstrap
 if fn.empty(fn.glob(install_path)) > 0 then
   vim.notify("正在安装Pakcer.nvim，请稍后...")
   paccker_bootstrap = fn.system({"git", "clone", "--depth", "1", -- "https://github.com/wbthomason/packer.nvim",
-    "https://gitcode.net/mirrors/wbthomason/packer.nvim", install_path})
+    "https://github.com/wbthomason/packer.nvim", install_path})
 
   -- https://github.com/wbthomason/packer.nvim/issues/750
   local rtp_addition = vim.fn.stdpath("data") .. "/site/pack/*/start/*"
@@ -64,64 +64,8 @@ packer.startup({
     ---------------------mycoc--------------------
     use ({'neoclide/coc.nvim', branch = 'release'})
 
-    --------------------myindentLine--------------
-    use ({"lukas-reineke/indent-blankline.nvim"})
-
-    -----------my jupyter----------------------- 
-use {
-  "ahmedkhalf/jupyter-nvim",
-  run = ":UpdateRemotePlugins",
-  config = function()
-    require("jupyter-nvim").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-			end
-}
-
-    --------------------- LSP --------------------
-    -- lspconfig
-    use({"neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer"})
-    -- 补全引擎
-    use("hrsh7th/nvim-cmp")
-    -- snippet 引擎
-    use("hrsh7th/vim-vsnip")
-    -- 补全源
-    use ("hrsh7th/cmp-vsnip")
-    use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
-    use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
-    use("hrsh7th/cmp-path") -- { name = 'path' }
-    use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
-    -- 常见编程语言代码段
-    use("rafamadriz/friendly-snippets")
-    -- ui
-    use("onsails/lspkind-nvim")
-    use("tami5/lspsaga.nvim" )
-  
-
-
-    -- surround
-    -- use("blackCauldron7/surround.nvim")
-
-    --------------------- colorschemes --------------------
     -- tokyonight
     use("folke/tokyonight.nvim")
-    -- OceanicNext
-    use("mhartington/oceanic-next")
-    -- gruvbox
-    use({
-      "ellisonleao/gruvbox.nvim",
-      requires = {"rktjmp/lush.nvim"}
-    })
-    -- zephyr
-    --use("glepnir/zephyr-nvim")
-    -- nord
-    use("shaunsingh/nord.nvim")
-    -- onedark
-    use("ful1e5/onedark.nvim")
-    -- nightfox
-    use("EdenEast/nightfox.nvim")
     
     -- monokai
     use("tanvirtin/monokai.nvim")
